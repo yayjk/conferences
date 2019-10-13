@@ -4,7 +4,8 @@
 
 body {
   height: inherit;
-  background-color: bisque;
+  background-color: black;
+  font-family: "Turret Road", cursive;
 }
 
 #container {
@@ -12,8 +13,11 @@ body {
   grid-template-columns: repeat(12, 1fr);
 }
 
-h1 {
+#head {
   grid-column: span 12;
+  text-align: center;
+  color: white;
+  display: flex;
 }
 .tile {
   grid-column: span 3;
@@ -21,26 +25,26 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-items: center;
   overflow: auto;
+  background-color: white;
+  border-radius: 12px;
 }
 
 .image {
-  height: 110px;
+  width: 100%;
+  height: 150px;
 }
 
-.tile > p,
-h3 {
+.details {
+  background-color: beige;
   text-align: center;
+  width: 100%;
+  height: 100%;
 }
 
 @media only screen and (max-width: 1100px) {
   .tile {
     grid-column: span 6;
-  }
-
-  .image {
-    height: 160px;
   }
 }
 
@@ -49,13 +53,7 @@ h3 {
     grid-column: 2/12;
   }
 
-  .image {
-    height: 200px;
-  }
-}
-
-@media only screen and (max-width: 450px) {
-  .image {
-    height: 80px;
+  h1 {
+    font-size: 24px;
   }
 }

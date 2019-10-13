@@ -2,21 +2,21 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link rel="stylesheet" href="{% static "god/styles.css" %}" />
-        <link href="https://fonts.googleapis.com/css?family=Turret+Road&display=swap" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
-        <title>conference</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="{% static "god/styles.css" %}" />
+    <link href="https://fonts.googleapis.com/css?family=Turret+Road&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+    <title>conference</title>
     </head>
     <body>
         <div id="container">
             <div id="head">
-                <h1 style="flex-grow: 10;">Free conferences</h1>
-                <span style="flex-grow: 1;"><a href='/paid' style="text-decoration: underline; color: white;"><h1>Paid</h1></a></span>
+                <h1 style="flex-grow: 10;">Paid conferences</h1>
+                <span style="flex-grow: 1;"><a href='../' style="text-decoration: underline; color: white;"><h1>Free</h1></a></span>
             </div>
-            {% for conference in free %}
+            {% for conference in paid %}
                 <div class="tile">
                     <span class="image" style="content: url({{ conference.imageURL }})"></span>
                     <div class="details">
