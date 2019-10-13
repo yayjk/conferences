@@ -1,0 +1,4 @@
+{
+    "python.pythonPath": "confenv\\Scripts\\python.exe",
+    "git.ignoreLimitWarning": true
+}
