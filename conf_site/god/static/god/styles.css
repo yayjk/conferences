@@ -77,6 +77,17 @@ body {
   .tile {
     grid-column: span 6;
   }
+
+  #search {
+    width: 50%;
+  }
+  #ab {
+    font-size: 18px;
+  }
+  #ab > a {
+    width: 75%;
+    height: 75%;
+  }
 }
 
 @media only screen and (max-width: 770px) {
@@ -85,6 +96,16 @@ body {
   }
 
   h1 {
-    font-size: 24px;
+    font-size: 14px;
+  }
+  #search {
+    width: 30%;
+  }
+  #ab {
+    font-size: 10px;
+  }
+  #ab > a {
+    width: 50%;
+    height: 50%;
   }
 }
