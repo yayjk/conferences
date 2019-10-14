@@ -13,10 +13,9 @@
     <body>
         <div id="container">
             <div id="head">
-                <h1 style="flex-grow: 10;">Paid conferences</h1>
-                <span style="flex-grow: 1;" id="ab"><a href='../' style="text-decoration: none; color: white;">Free</a></span>
+                <h1>Search Results</h1>
             </div>
-            {% for conference in paid %}
+            {% for conference in object_list %}
                 <div class="tile">
                     <span class="image" style="content: url({{ conference.imageURL }})"></span>
                     <div class="details">

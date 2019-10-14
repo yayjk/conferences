@@ -6,15 +6,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <link rel="stylesheet" href="{% static "god/styles.css" %}" />
-        <link href="https://fonts.googleapis.com/css?family=Turret+Road&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
         <title>conference</title>
     </head>
     <body>
         <div id="container">
             <div id="head">
-                <h1 style="flex-grow: 10;">Free conferences</h1>
-                <span style="flex-grow: 1;"><a href='/paid' style="text-decoration: underline; color: white;"><h1>Paid</h1></a></span>
+                <h1 style="flex-grow: 7;">Free conferences</h1>
+                <form action="{% url 'search_results' %}" method="get" style="flex-grow: 3;">
+                    <input name="q" type="text" placeholder="Search...">
+                </form>
+                <span style="flex-grow: 1;" id = "ab"><a href='/paid' style="text-decoration: none; color: white;">Paid</a></span>
             </div>
             {% for conference in free %}
                 <div class="tile">

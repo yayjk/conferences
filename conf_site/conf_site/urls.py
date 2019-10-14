@@ -17,15 +17,13 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path
 from god import views
-# from god.views import save_to_db <---------IMPORT THIS ONCE IN THE BEGINNING TO MAKE A DATABASE----------------->
+from god.views import SearchView
+#from god.views import save_to_db
 
 urlpatterns = [
-    #
-    #
-    # url(r'^save_to_db/', save_to_db), <-------- RUN THIS ONCE AT THE BEGINNING
-    #
-    #
+    #url(r'^save_to_db/', save_to_db),
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('paid/', views.paid, name='paid')
+    path('paid/', views.paid, name='paid'),
+    path('search/', SearchView.as_view(), name='search_results')
 ]
