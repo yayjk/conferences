@@ -13,7 +13,11 @@
     <body>
         <div id="container">
             <div id="head">
-                <h1>Search Results</h1>
+                <h1 style="flex-grow: 10;">Search results</h1>
+                <form action="{% url 'search_results' %}" method="get" style="flex-grow: 3;" id="forms">
+                    <input name="q" type="text" placeholder="Search..." id="search">
+                </form>
+                <span style="flex-grow: 1;" id="ab"><a href='../' style="text-decoration: none; color: white;">Home</a></span>
             </div>
             {% for conference in object_list %}
                 <div class="tile">
@@ -23,6 +27,7 @@
                         <p>Start Date:{{ conference.confStartDate }}</p>
                         <p>End Date:{{ conference.confEndDate }}</p>
                         <p><i class="fas fa-compass" style="margin-right: 4px"></i>{{ conference.venue }}</p>
+                        <p>Entry is {{conference.status}}</p>
                         <p><a href="{{ conference.confUrl }}" style="text-decoration: none;">More details here</a></p>
                     </div>
                 </div>

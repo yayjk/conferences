@@ -14,8 +14,8 @@
         <div id="container">
             <div id="head">
                 <h1 style="flex-grow: 7;">Free conferences</h1>
-                <form action="{% url 'search_results' %}" method="get" style="flex-grow: 3;">
-                    <input name="q" type="text" placeholder="Search...">
+                <form action="{% url 'search_results' %}" method="get" style="flex-grow: 3;" id="forms">
+                    <input name="q" type="text" placeholder="Search..." id="search">
                 </form>
                 <span style="flex-grow: 1;" id = "ab"><a href='/paid' style="text-decoration: none; color: white;">Paid</a></span>
             </div>

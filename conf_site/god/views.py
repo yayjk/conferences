@@ -16,7 +16,7 @@ class SearchView(ListView):
         query = self.request.GET.get('q')
         object_list = confDB.objects.filter(
             Q(confEndDate=query) | Q(confStartDate__icontains=query) | Q(
-                confName__icontains=query) | Q(venue__icontains=query)
+                confName__icontains=query) | Q(venue__icontains=query) | Q(status__icontains=query)
         )
 
         return object_list
@@ -80,6 +80,7 @@ def save_to_db(request):
         ) if key == 'imageURL' or key == 'confEndDate' or key == 'confStartDate' or key == 'confName' or key == 'venue' or key == 'confUrl'}
         if not newDicts['imageURL'].startswith("\""):
             newDicts['imageURL'] = "\"" + newDicts['imageURL'] + "\""
+        newDicts['status'] = 'free'
         free_conf.append(newDicts)
 
     for conf_no in range(len(paid_data)):
@@ -87,6 +88,7 @@ def save_to_db(request):
         ) if key == 'imageURL' or key == 'confEndDate' or key == 'confStartDate' or key == 'confName' or key == 'venue' or key == 'confUrl'}
         if not newDicts['imageURL'].startswith("\""):
             newDicts['imageURL'] = "\"" + newDicts['imageURL'] + "\""
+        newDicts['status'] = 'paid'
         paid_conf.append(newDicts)
 
     for each_conf in free_conf:

@@ -10,6 +10,7 @@ class confDB(models.Model):
     confName = models.CharField(max_length=200)
     venue = models.TextField()
     confUrl = models.URLField(max_length=200)
+    status = models.CharField(max_length=50, default='null')
 
     def __str__(self):
         return self.confName
